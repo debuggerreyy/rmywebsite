@@ -1,0 +1,175 @@
+/* General Styles */
+body {
+    font-family: 'Patrick Hand', cursive; /* Pencil-style font */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9; /* Light background for a clean look */
+}
+
+/* Welcome Section */
+.welcome-section {
+    text-align: center;
+    padding: 50px;
+}
+
+.welcome-section h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.arrow-box {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #555;
+}
+
+/* Form and Summary Section */
+.form-section, .summary-section {
+    max-width: 800px;
+    margin: 50px auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 4px solid #ccc; /* Notebook-style border */
+    border-image: url('notebook-border.png') 30 round; /* Notebook-style border using image */
+}
+
+.form-section h1, .summary-section h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Summary Section */
+.summary-section {
+    text-align: left;
+}
+
+.summary-content p {
+    margin: 5px 0;
+}
+
+/* Buttons */
+button.action-button {
+    width: 48%;
+    display: inline-block;
+    margin: 0 1%;
+    background-color: #243a25; /* Dark green for buttons */
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
+button.action-button:hover {
+    background-color: #45a049;
+}
+
+/* Save and Edit Button Container */
+.button-group {
+    display: flex;
+    justify-content: space-between; /* Align buttons horizontally */
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .form-section, .summary-section {
+        width: 90%;
+    }
+
+    .button-group {
+        flex-direction: column; /* Stack buttons vertically on smaller screens */
+    }
+
+    button.action-button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+/* Thank You Page Section */
+.thank-you-section {
+    text-align: center;
+    padding: 50px;
+    max-width: 600px;
+    margin: 50px auto;
+    background: #ffffff;
+    border: 4px solid #ccc; /* Notebook-style border */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.thank-you-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.thank-you-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.thank-you-section .button-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* General button styling */
+.action-button {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding for comfortable size */
+    text-align: center; /* Center text */
+    text-decoration: none; /* No underline */
+    display: inline-block; /* Inline-block layout */
+    font-size: 16px; /* Larger font size */
+    margin: 4px 2px; /* Margin between buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 8px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect */
+.action-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Save Button specific styling */
+#saveButton {
+    background-color: #243a25; /* Blue background for Save */
+}
+
+#saveButton:hover {
+    background-color: #45a049 /* Darker blue on hover */
+}
+
+/* Additional styling for disabled buttons (optional) */
+.action-button:disabled {
+    background-color: #cccccc; /* Grey background */
+    color: #666666; /* Grey text */
+    cursor: not-allowed; /* Not-allowed cursor */
+}

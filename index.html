@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rice Planting Reservation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Welcome Section -->
+    <div class="welcome-section" id="welcome">
+        <h1>Welcome to the Rice Planting Reservation System</h1>
+        <p>Click the arrow below to proceed with your reservation.</p>
+        <div class="arrow-box" id="arrow" onclick="proceedToReservation()">
+            <span>&#x2192;</span>
+        </div>
+    </div>
+
+    <!-- Reservation Form Section -->
+    <div class="form-section" id="form" style="display: none;">
+        <h1>Reservation Form</h1>
+        <form id="reservationForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+            <label for="number">Contact Number:</label>
+            <input type="tel" id="number" name="number" placeholder="Enter your contact number" required>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" placeholder="Enter your address" required>
+
+            <label for="type">Type of Planting:</label>
+            <select id="type" name="type" required onchange="calculateCost()">
+                <option value="">--Select Planting Type--</option>
+                <option value="inbred">Inbred</option>
+                <option value="hybrid">Hybrid</option>
+            </select>
+
+            <label for="hectares">Number of Hectares:</label>
+            <input type="number" id="hectares" name="hectares" placeholder="Enter the number of hectares" step="0.01" required onchange="calculateCost()">
+
+            <label for="cost">Total Cost (₱):</label>
+            <input type="text" id="cost" name="cost" placeholder="Computed cost will appear here" readonly>
+
+            <label for="date">Date of Reservation:</label>
+            <input type="date" id="date" name="date" required>
+
+            <button type="button" onclick="submitReservation()">Submit Reservation</button>
+        </form>
+    </div>
+
+    <!-- Reservation Summary Section -->
+    <div class="summary-section" id="summary" style="display: none;">
+        <h1>Reservation Summary</h1>
+        <div class="summary-content">
+            <p><strong>Name:</strong> <span id="summaryName"></span></p>
+            <p><strong>Contact Number:</strong> <span id="summaryNumber"></span></p>
+            <p><strong>Address:</strong> <span id="summaryAddress"></span></p>
+            <p><strong>Planting Type:</strong> <span id="summaryType"></span></p>
+            <p><strong>Date of Reservation:</strong> <span id="summaryDate"></span></p>
+            <p><strong>Number of Hectares:</strong> <span id="summaryHectares"></span></p>
+            <p><strong>Total Cost (₱):</strong> <span id="summaryCost"></span></p>
+        </div>
+    
+        <div class="button-group">
+            <!-- Edit Button -->
+            <button id="editButton" class="action-button" onclick="editReservation()">Edit</button>
+
+            <!-- Save Button -->
+             <button id="saveButton" class="action-button" onclick="saveReservation()">Save</button>
+
+        </div>
+    </div>
+    <!-- Thank You Page Section -->
+<div class="thank-you-section" id="thankYou" style="display: none;">
+    <h1>Thank You!</h1>
+    <p>Your reservation has been successfully saved.</p>
+    <div class="button-group">
+        <button class="action-button" onclick="newReservation()">New Reservation</button>
+        <button class="action-button" onclick="exitWebsite()">Exit</button>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
